@@ -9,7 +9,14 @@ return require('packer').startup(function(use)
     	use 'hrsh7th/cmp-nvim-lsp-signature-help'
     	use 'hrsh7th/cmp-vsnip'                             
     	use 'hrsh7th/cmp-path'                              
-    	use 'hrsh7th/cmp-buffer'                            
-    	use 'hrsh7th/vim-vsnip'
+    	use 'hrsh7th/cmp-buffer'                          
+    	-- use 'hrsh7th/vim-vsnip'
 	use 'nvim-tree/nvim-tree.lua'
+	use 'nvim-lua/plenary.nvim'
+	use { "catppuccin/nvim", as = "catppuccin" }
+	use {'nvim-telescope/telescope.nvim', tag = '0.1.1',}
+	use {
+  		'nvim-lualine/lualine.nvim',
+  		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
 end)

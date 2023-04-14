@@ -31,5 +31,9 @@ cmp.setup({
       			behavior = cmp.ConfirmBehavior.Insert,
       			select = true,
     		})
+	},
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
 	}
 })

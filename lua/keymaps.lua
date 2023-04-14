@@ -2,7 +2,9 @@ local map = vim.api.nvim_set_keymap
 local kmap = vim.keymap.set
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.cmd('colorscheme slate')
+vim.cmd('colorscheme catppuccin')
+vim.cmd('set number')
+vim.cmd('set relativenumber')
 
 
 map('n', 't', [[:NvimTreeToggle<CR>]], {silent=True})
@@ -18,4 +20,7 @@ kmap('n', 'gd', vim.lsp.buf.definition, opts)
 kmap('n', 'gi', vim.lsp.buf.implementation, opts)
 kmap('n', 'gr', vim.lsp.buf.references, opts)
 kmap('n', '<leader>c', vim.lsp.buf.code_action, opts)
+kmap('n', '<leader>q', ":bd<CR>", opts)
 kmap('n', '<CR>', ":noh<CR><CR>", opts)
+kmap('n', '<leader>p', ":Telescope find_files<CR>", opts)
+kmap('n', '<leader>g', ":Telescope live_grep<CR>", opts)
