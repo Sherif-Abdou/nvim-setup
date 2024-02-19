@@ -4,7 +4,8 @@ local on_attach = function(client)
 	require('completion').on_attach(client)
 end
 
-nvim_lsp.jedi_language_server.setup({})
+-- nvim_lsp.jedi_language_server.setup({})
+nvim_lsp.pyright.setup({})
 nvim_lsp.clangd.setup({})
 nvim_lsp.tsserver.setup({})
 nvim_lsp.omnisharp.setup({})
