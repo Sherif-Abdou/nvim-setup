@@ -2,12 +2,25 @@ local map = vim.api.nvim_set_keymap
 local kmap = vim.keymap.set
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.cmd('colorscheme catppuccin')
+vim.opt.termguicolors = true
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 2
+vim.opt.foldnestmax=4
+
+
+
+vim.cmd('colorscheme kanagawa')
 vim.cmd('set number')
 vim.cmd('set relativenumber')
 
+--:tnoremap <Esc> <C-\><C-n>
+map('n', "<F2>", ":ToggleTerm<CR>", {silent=true})
+map('t', '<F2>', [[<C-\><C-n>:ToggleTerm<CR>]], {silent=true})
 
-map('n', 't', [[:NvimTreeToggle<CR>]], {silent=True})
+map('n', 't', [[:NvimTreeToggle<CR>]], {silent=true})
+map('n', 'T', [[:TroubleToggle<CR>]], {silent=true})
 map('n', '<leader>j', '<C-w>j', {silent=true})
 map('n', '<leader>k', '<C-w>k', {silent=true})
 map('n', '<leader>l', '<C-w>l', {silent=true})
@@ -19,21 +32,31 @@ kmap('n', 'gD', vim.lsp.buf.declaration, opts)
 kmap('n', 'gd', vim.lsp.buf.definition, opts)
 kmap('n', 'gi', vim.lsp.buf.implementation, opts)
 kmap('n', 'gr', vim.lsp.buf.references, opts)
+kmap('n', '<F10>', ':ClangdSwitchSourceHeader<CR>', opts)
+kmap('i', '<F10>', '<ESC>:ClangdSwitchSourceHeader<CR>', opts)
+kmap('n', '<leader>u', '<C-o>', opts)
+kmap('n', '<leader>.', vim.lsp.buf.code_action, opts)
 kmap('n', '<leader>c', vim.lsp.buf.code_action, opts)
+kmap('v', '<leader>c', vim.lsp.buf.code_action, opts)
+kmap('n', '<leader>r', vim.lsp.buf.rename, opts)
 kmap('n', '<leader>q', ":silent bd<CR>", opts)
 kmap('n', '<CR>', ":noh<CR><CR>", opts)
 kmap('n', '<leader>p', ":Telescope find_files<CR>", opts)
 kmap('n', '<leader>g', ":Telescope live_grep<CR>", opts)
+kmap('n', '<leader>d', ":Telescope lsp_dynamic_workspace_symbols<CR>", opts)
 kmap('n', '<leader>b', require('dap').toggle_breakpoint, opts)
-kmap('n', '<leader>c', require('dap').continue, opts)
+kmap('n', '<leader>C', require('dap').continue, opts)
 kmap('n', '<leader>s', require('dap').step_into, opts)
 kmap('n', '<leader>S', require('dap').step_over, opts)
+kmap('n', '<leader>n', require('dap').step_over, opts)
 kmap('n', '<leader>O', require('dap').step_out, opts)
 kmap('n', '<leader>T', require('dap').terminate, opts)
 kmap('n', '<leader>f', require('dap').focus_frame, opts)
 kmap('n', '<leader>f', require('dap').focus_frame, opts)
-kmap('n', '<leader>C', require('dap').run_to_cursor, opts)
+kmap('n', '<leader>M', require('dap').run_to_cursor, opts)
 kmap('n', '<leader>o', require('dap').repl.open, opts)
+kmap('n', '<leader>;',  ":Telescope colorscheme<CR>", opts)
+kmap('n', '<leader>z',  ":ZenMode<CR>", opts)
 
 local dap = require('dap')
 local api = vim.api
