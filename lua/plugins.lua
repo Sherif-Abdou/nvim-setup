@@ -48,19 +48,17 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-web-devicons'
     use {
         'folke/trouble.nvim',
-        opts = {
-            icons = false
-        },
+        opts = {},
     }
     use 'nyoom-engineering/oxocarbon.nvim'
     use 'savq/melange-nvim'
     use 'tikhomirov/vim-glsl'
     use 'p00f/clangd_extensions.nvim'
-    use {
-        'mrcjkb/rustaceanvim',
-        version = '^4', -- Recommended
-        lazy = false, -- This plugin is already lazy
-    }
+    -- use {
+    --     'mrcjkb/rustaceanvim',
+    --     version = '^4', -- Recommended
+    --     lazy = false, -- This plugin is already lazy
+    -- }
         use {
             "folke/zen-mode.nvim",
             opts = {
@@ -72,4 +70,8 @@ return require('packer').startup(function(use)
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end}
+
+    use { "bluz71/vim-moonfly-colors" }
+
+    use "ggandor/leap.nvim"
 end)

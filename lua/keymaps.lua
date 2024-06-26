@@ -9,9 +9,9 @@ vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 2
 vim.opt.foldnestmax=4
 
+require('leap').create_default_mappings()
 
-
-vim.cmd('colorscheme kanagawa')
+vim.cmd('colorscheme moonfly')
 vim.cmd('set number')
 vim.cmd('set relativenumber')
 
@@ -20,7 +20,6 @@ map('n', "<F2>", ":ToggleTerm<CR>", {silent=true})
 map('t', '<F2>', [[<C-\><C-n>:ToggleTerm<CR>]], {silent=true})
 
 map('n', 't', [[:NvimTreeToggle<CR>]], {silent=true})
-map('n', 'T', [[:TroubleToggle<CR>]], {silent=true})
 map('n', '<leader>j', '<C-w>j', {silent=true})
 map('n', '<leader>k', '<C-w>k', {silent=true})
 map('n', '<leader>l', '<C-w>l', {silent=true})
@@ -28,10 +27,15 @@ map('n', '<leader>h', '<C-w>h', {silent=true})
 map('n', ' ', '<Nop>', {silent = true})
 local opts = {silent=true}
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-kmap('n', 'gD', vim.lsp.buf.declaration, opts)
-kmap('n', 'gd', vim.lsp.buf.definition, opts)
-kmap('n', 'gi', vim.lsp.buf.implementation, opts)
-kmap('n', 'gr', vim.lsp.buf.references, opts)
+
+local builtin = require("telescope.builtin")
+
+kmap('n', 'T', builtin.diagnostics, {silent=true})
+kmap('n', 'gD', builtin.lsp_type_definitions, opts)
+kmap('n', 'gd', builtin.lsp_definitions, opts)
+kmap('n', 'gi', builtin.lsp_implementations, opts)
+kmap('n', 'gr', builtin.lsp_references, opts)
+
 kmap('n', '<F10>', ':ClangdSwitchSourceHeader<CR>', opts)
 kmap('i', '<F10>', '<ESC>:ClangdSwitchSourceHeader<CR>', opts)
 kmap('n', '<leader>u', '<C-o>', opts)
@@ -39,6 +43,7 @@ kmap('n', '<leader>.', vim.lsp.buf.code_action, opts)
 kmap('n', '<leader>c', vim.lsp.buf.code_action, opts)
 kmap('v', '<leader>c', vim.lsp.buf.code_action, opts)
 kmap('n', '<leader>r', vim.lsp.buf.rename, opts)
+kmap('n', '<leader>R', vim.lsp.buf.format, opts)
 kmap('n', '<leader>q', ":silent bd<CR>", opts)
 kmap('n', '<CR>', ":noh<CR><CR>", opts)
 kmap('n', '<leader>p', ":Telescope find_files<CR>", opts)
