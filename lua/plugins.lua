@@ -74,4 +74,6 @@ return require('packer').startup(function(use)
     use { "bluz71/vim-moonfly-colors" }
 
     use "ggandor/leap.nvim"
+    use "0xstepit/flow.nvim"
+    use "rose-pine/neovim"
 end)

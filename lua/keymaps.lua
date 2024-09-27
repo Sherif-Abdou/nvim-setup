@@ -11,7 +11,7 @@ vim.opt.foldnestmax=4
 
 require('leap').create_default_mappings()
 
-vim.cmd('colorscheme moonfly')
+vim.cmd('colorscheme kanagawa')
 vim.cmd('set number')
 vim.cmd('set relativenumber')
 
