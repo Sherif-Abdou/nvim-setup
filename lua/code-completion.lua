@@ -1,6 +1,6 @@
-vim.opt.completeopt = {'menuone', 'noselect', 'noinsert', 'preview'}
+vim.opt.completeopt = { 'menuone', 'noselect', 'noinsert', 'preview' }
 
-vim.opt.shortmess = vim.opt.shortmess + { c =true}
+vim.opt.shortmess = vim.opt.shortmess + { c = true }
 
 local cmp = require('cmp')
 cmp.setup({
@@ -9,8 +9,8 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lua' },
-        { name = 'buffer'  },
-        { name = 'vsnip'},
+        { name = 'buffer' },
+        { name = 'vsnip' },
     },
     snippet = {
         -- REQUIRED - you must specify a snippet engine
@@ -44,3 +44,7 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     }
 })
+
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+

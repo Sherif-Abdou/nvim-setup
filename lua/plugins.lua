@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
     use { "catppuccin/nvim", as = "catppuccin" }
     use 'nvim-telescope/telescope.nvim'
+    use 'f-person/auto-dark-mode.nvim'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -76,4 +77,5 @@ return require('packer').startup(function(use)
     use "ggandor/leap.nvim"
     use "0xstepit/flow.nvim"
     use "rose-pine/neovim"
+    use "folke/tokyonight.nvim"
 end)

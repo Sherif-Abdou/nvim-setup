@@ -1,19 +1,5 @@
 local map = vim.api.nvim_set_keymap
 local kmap = vim.keymap.set
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-vim.opt.termguicolors = true
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 2
-vim.opt.foldnestmax=4
-
-require('leap').create_default_mappings()
-
-vim.cmd('colorscheme kanagawa')
-vim.cmd('set number')
-vim.cmd('set relativenumber')
 
 --:tnoremap <Esc> <C-\><C-n>
 map('n', "<F2>", ":ToggleTerm<CR>", {silent=true})

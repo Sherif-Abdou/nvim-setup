@@ -1,7 +1,7 @@
-
+require("general_configs")
 require('plugins')
 require('mason-config')
-require('rust-analyzer')
+require('lsp')
 require('code-completion')
 require('file-explorer')
 require('keymaps')

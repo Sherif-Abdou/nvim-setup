@@ -28,7 +28,7 @@ nvim_lsp.clangd.setup({
   -- on_attach = on_attach,
   flags = { debounce_text_changes = 150 }
 })
-nvim_lsp.tsserver.setup({})
+nvim_lsp.ts_ls.setup({})
 nvim_lsp.omnisharp.setup({})
 nvim_lsp.gopls.setup({})
 nvim_lsp.elixirls.setup({})
