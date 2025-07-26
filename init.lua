@@ -1,12 +1,17 @@
-require("general_configs")
-require('plugins')
-require('mason-config')
-require('lsp')
-require('code-completion')
-require('file-explorer')
-require('keymaps')
-require('dap_config')
-require('terminal')
+-- require("general_configs")
+-- require('plugins')
+-- require('mason-config')
+-- require('lsp')
+-- require('code-completion')
+-- require('file-explorer')
+-- require('keymaps')
+-- require('dap_config')
+-- require('terminal')
+
+require("config.lazy")
+require("movements")
+require("lsp")
+
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
