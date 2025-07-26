@@ -17,6 +17,7 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 local builtin = require("telescope.builtin")
 
 kmap('n', 'T', builtin.diagnostics, {silent=true})
+kmap('n', 'D', function() vim.diagnostic.open_float(nil, { focusable = false }) end);
 kmap('n', 'gD', builtin.lsp_type_definitions, opts)
 kmap('n', 'gd', builtin.lsp_definitions, opts)
 kmap('n', 'gi', builtin.lsp_implementations, opts)

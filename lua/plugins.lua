@@ -3,16 +3,15 @@ return require('packer').startup(function(use)
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-cmp' 
+    use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-nvim-lua'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
-    use 'hrsh7th/cmp-vsnip'                             
-    use 'hrsh7th/cmp-path'                              
-    use 'hrsh7th/cmp-buffer'                          
+    use 'hrsh7th/cmp-vsnip'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/vim-vsnip'
     use 'nvim-tree/nvim-tree.lua'
-    use 'nvim-lua/plenary.nvim'
     use { "catppuccin/nvim", as = "catppuccin" }
     use 'nvim-telescope/telescope.nvim'
     use 'f-person/auto-dark-mode.nvim'
@@ -60,17 +59,17 @@ return require('packer').startup(function(use)
     --     version = '^4', -- Recommended
     --     lazy = false, -- This plugin is already lazy
     -- }
-        use {
-            "folke/zen-mode.nvim",
-            opts = {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
+    use {
+        "folke/zen-mode.nvim",
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
         }
-    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    }
+    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
-    end}
+    end }
 
     use { "bluz71/vim-moonfly-colors" }
 
@@ -78,4 +77,15 @@ return require('packer').startup(function(use)
     use "0xstepit/flow.nvim"
     use "rose-pine/neovim"
     use "folke/tokyonight.nvim"
+    use "onsails/lspkind.nvim"
+    use { "amitds1997/remote-nvim.nvim", config = true }
+    use "nvim-lua/plenary.nvim" -- For standard functions
+    use "NeogitOrg/neogit"
+    use "MunifTanjim/nui.nvim"  -- To build the plugin UI
+    use "hrsh7th/cmp-nvim-lsp-signature-help"
+    use "Shatur/neovim-ayu"
+    use "zbirenbaum/copilot.lua"
+    use "vague2k/vague.nvim"
+    use "everviolet/nvim"
+    use "ribru17/bamboo.nvim"
 end)

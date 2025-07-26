@@ -4,6 +4,7 @@ dap.adapters.lldb = {
   command = '/opt/homebrew/opt/llvm/bin/lldb-dap', -- adjust as needed, must be absolute path
   name = 'lldb'
 }
+
 dap.configurations.cpp = {
   {
     name = 'Launch',

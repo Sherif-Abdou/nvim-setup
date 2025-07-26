@@ -4,14 +4,15 @@ vim.opt.termguicolors = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 2
+vim.opt.foldlevelstart = 4
 vim.opt.foldnestmax = 8
 
 require('leap').create_default_mappings()
 
-vim.cmd('colorscheme tokyonight-storm')
+vim.cmd('colorscheme bamboo')
 vim.cmd('set number')
 vim.cmd('set relativenumber')
+vim.cmd('set exrc')
 
 local auto_dark_mode = require('auto-dark-mode')
 
@@ -27,4 +28,7 @@ auto_dark_mode.setup({
 		-- vim.cmd('colorscheme gruvbox')
 	end,
 })
+
+local neogit = require('neogit')
+neogit.setup {}
 
