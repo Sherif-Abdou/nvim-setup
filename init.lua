@@ -1,14 +1,5 @@
--- require("general_configs")
--- require('plugins')
--- require('mason-config')
--- require('lsp')
--- require('code-completion')
--- require('file-explorer')
--- require('keymaps')
--- require('dap_config')
--- require('terminal')
-
 require("config.lazy")
+require("general")
 require("movements")
 require("lsp")
 
@@ -16,4 +7,5 @@ require("lsp")
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
--- vim.g.did_load_netrw = 1
+
+vim.cmd("colorscheme bamboo")
