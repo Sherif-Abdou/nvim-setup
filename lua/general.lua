@@ -1,3 +1,3 @@
 vim.cmd('set number')
 vim.cmd('set relativenumber')
-vim.cmd('set exrc')
+vim.cmd('filetype on')

@@ -23,12 +23,13 @@ return {
         vim.keymap.set('n', '<leader>ff', ivy(builtin.grep_string), { desc = 'Telescope buffers' })
         vim.keymap.set('n', '<leader>fh', ivy(builtin.help_tags), { desc = 'Telescope help tags' })
         vim.keymap.set('n', '<leader>;', ivy(builtin.colorscheme), { desc = 'Telescope help tags' })
+        vim.keymap.set('n', '<leader>m', ivy(builtin.marks), { desc = 'Telescope help tags' })
 
         local opts = { silent = true }
 
         vim.keymap.set('n', 'gD', cursor(builtin.lsp_type_definitions), opts)
         vim.keymap.set('n', 'gd', cursor(builtin.lsp_definitions), opts)
-        vim.keymap.set('n', 'gi', cursor(builtin.lsp_implementations), opts)
+        vim.keymap.set('n', '<leader>gi', cursor(builtin.lsp_implementations), opts)
         vim.keymap.set('n', 'gr', cursor(builtin.lsp_references), opts)
 
         vim.keymap.set('n', 'T', ivy(builtin.diagnostics), {silent=true})

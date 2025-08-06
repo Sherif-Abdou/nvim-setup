@@ -1,5 +1,5 @@
-require("config.lazy")
 require("general")
+require("config.lazy")
 require("movements")
 require("lsp")
 
