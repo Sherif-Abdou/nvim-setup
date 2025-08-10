@@ -1,4 +1,9 @@
 return {
     'neovim/nvim-lspconfig',
-    lazy = false
+    lazy = false,
+    -- opts = {
+    --     inlay_hints = {
+    --         enabled = true,
+    --     }
+    -- }
 }
