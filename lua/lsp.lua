@@ -33,5 +33,16 @@ vim.lsp.config('rust_analyzer', {
         }
     }
 })
+vim.lsp.config('elixirls', {
+    cmd = { "/home/sherif/.elixir-ls/release/language_server.sh" },
+})
+vim.lsp.enable('clangd')
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('lua_ls')
+vim.lsp.enable('jdtls')
+vim.lsp.enable('pyright')
+vim.lsp.enable('gopls')
+vim.lsp.enable('sqlls')
+vim.lsp.enable('elixirls')
+vim.lsp.enable('ocamllsp')
+vim.lsp.enable('kotlin_lsp')
