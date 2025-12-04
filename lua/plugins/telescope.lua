@@ -32,7 +32,7 @@ return {
         vim.keymap.set('n', '<C-g>', cursor(builtin.lsp_implementations), opts)
         vim.keymap.set('n', 'gr', cursor(builtin.lsp_references), opts)
 
-        vim.keymap.set('n', 'T', ivy(builtin.diagnostics), {silent=true})
+        -- vim.keymap.set('n', 'T', ivy(builtin.diagnostics), {silent=true})
     end
 }
 

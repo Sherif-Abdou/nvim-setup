@@ -15,7 +15,8 @@ return {
         "vague2k/vague.nvim",
     },
     {
-        'everviolet/nvim', name = 'evergarden',
+        'everviolet/nvim',
+        name = 'evergarden',
         priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
         opts = {
             theme = {
@@ -52,4 +53,18 @@ return {
         lazy = false,
         priority = 1000,
     },
+    {
+        'maxmx03/fluoromachine.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            local fm = require 'fluoromachine'
+
+            fm.setup {
+                glow = false,
+                theme = 'retrowave',
+                transparent = false,
+            }
+        end
+    }
 }

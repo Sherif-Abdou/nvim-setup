@@ -26,16 +26,44 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
+features = {}
+
+function enable_feature(feature)
+    table.insert(features, feature)
+    vim.lsp.config('rust_analyzer', {
+        settings = {
+            ['rust-analyzer'] = {
+                procMacro = true,
+                cargo = {
+                    features = features,
+                },
+                check = {
+                    command = "clippy",
+                }
+            }
+        }
+    })
+    vim.cmd("LspRestart")
+    vim.cmd("LspCargoReload")
+    -- vim.lsp.enable("rust_analyzer", false)
+    -- vim.lsp.enable("rust_analyzer", true)
+end
+
 vim.lsp.config('rust_analyzer', {
     settings = {
         ['rust-analyzer'] = {
-            procMacro = true
+            procMacro = true,
+            cargo = {
+                features = features,
+            },
         }
     }
 })
+
 vim.lsp.config('elixirls', {
     cmd = { "/home/sherif/.elixir-ls/release/language_server.sh" },
 })
+
 vim.lsp.enable('clangd')
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('lua_ls')
