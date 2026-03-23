@@ -62,8 +62,10 @@ return {
 
             fm.setup {
                 glow = false,
-                theme = 'retrowave',
-                transparent = false,
+                theme = 'delta',
+                -- theme = 'retrowave',
+                -- theme = 'fluoromachine',
+                transparent = true,
             }
         end
     }

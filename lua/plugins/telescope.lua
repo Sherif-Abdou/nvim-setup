@@ -17,6 +17,11 @@ return {
             end
             return inner
         end
+        vim.keymap.del('n', 'grn')
+        vim.keymap.del('n', 'grr')
+        vim.keymap.del('n', 'gra')
+        vim.keymap.del('n', 'gri')
+        vim.keymap.del('n', 'grt')
         vim.keymap.set('n', '<leader>p', ivy(builtin.find_files), { desc = 'Telescope find files' })
         vim.keymap.set('n', '<leader>g', ivy(builtin.live_grep), { desc = 'Telescope live grep' })
         vim.keymap.set('n', '<leader>fb', ivy(builtin.buffers), { desc = 'Telescope buffers' })
