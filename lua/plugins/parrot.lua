@@ -22,5 +22,8 @@ return {
         },
       },
     }
+    vim.keymap.set({"n", "v"}, "gai", "<cmd>PrtImplement<cr>", { noremap = true, silent = true});
+    vim.keymap.set({"n", "v"}, "gar", "<cmd>PrtRewrite<cr>", { noremap = true, silent = true});
+    vim.keymap.set({"n", "v"}, "gac", "<cmd>PrtChatToggle<cr>", { noremap = true, silent = true});
   end,
 }
