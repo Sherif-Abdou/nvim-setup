@@ -17,13 +17,17 @@ return {
           },
           models ={
             "qwen2.5-coder-3b",
-            "gemma-3-4b-it",
+            "gemma-3-4b-it-qat",
           }
         },
       },
     }
-    vim.keymap.set({"n", "v"}, "gai", "<cmd>PrtImplement<cr>", { noremap = true, silent = true});
-    vim.keymap.set({"n", "v"}, "gar", "<cmd>PrtRewrite<cr>", { noremap = true, silent = true});
+    vim.keymap.set("n", "gai", "<cmd>PrtImplement<cr>", { noremap = true, silent = true});
+    vim.keymap.set("v", "gai", ":PrtImplement<cr>", { noremap = true, silent = true});
+    vim.keymap.set("n", "gar", "<cmd>PrtRewrite<cr>", { noremap = true, silent = true});
+    vim.keymap.set("v", "gar", ":PrtRewrite<cr>", { noremap = true, silent = true});
+    vim.keymap.set({"n", "v"}, "gaa", ":PrtAsk<cr>", { noremap = true, silent = true});
     vim.keymap.set({"n", "v"}, "gac", "<cmd>PrtChatToggle<cr>", { noremap = true, silent = true});
+    vim.keymap.set({"n", "v"}, "gad", "<cmd>PrtChatDelete<cr>", { noremap = true, silent = true});
   end,
 }

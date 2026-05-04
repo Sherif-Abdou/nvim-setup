@@ -65,7 +65,7 @@ return {
                 theme = 'delta',
                 -- theme = 'retrowave',
                 -- theme = 'fluoromachine',
-                transparent = true,
+                -- transparent = true,
             }
         end
     }
