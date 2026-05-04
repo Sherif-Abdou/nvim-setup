@@ -5,7 +5,7 @@ return {
     build = ':TSUpdate',
     config = function()
         vim.api.nvim_create_autocmd('FileType', {
-            pattern = { 'c', 'rust', 'lua', 'cpp', 'java', 'go', 'elixir' },
+            pattern = { 'c', 'rust', 'lua', 'cpp', 'java', 'go', 'elixir', 'markdown', 'markdown_inline', 'yaml' },
             callback = function()
                 vim.treesitter.start()
                 vim.cmd('set foldmethod=expr')

@@ -16,6 +16,9 @@ function set_keybinds()
     map('v', '<leader>c', vim.lsp.buf.code_action, opts)
     map('n', '<leader>r', vim.lsp.buf.rename, opts)
     map('n', '<leader>R', vim.lsp.buf.format, opts)
+    vim.keymap.del('n', '<leader>cs')
+    vim.keymap.del('n', '<leader>cl')
+    vim.keymap.set('n', '<leader>s', ":Trouble document_symbols<CR>", { silent = true, noremap = true })
 end
 
 set_keybinds()

@@ -20,6 +20,7 @@ return {
         vim.keymap.del('n', 'grn')
         vim.keymap.del('n', 'grr')
         vim.keymap.del('n', 'gra')
+        vim.keymap.del('v', 'gra')
         vim.keymap.del('n', 'gri')
         vim.keymap.del('n', 'grt')
         vim.keymap.set('n', '<leader>p', ivy(builtin.find_files), { desc = 'Telescope find files' })
@@ -32,10 +33,11 @@ return {
 
         local opts = { silent = true }
 
-        vim.keymap.set('n', 'gD', cursor(builtin.lsp_type_definitions), opts)
-        vim.keymap.set('n', 'gd', cursor(builtin.lsp_definitions), opts)
-        vim.keymap.set('n', '<C-g>', cursor(builtin.lsp_implementations), opts)
-        vim.keymap.set('n', 'gr', cursor(builtin.lsp_references), opts)
+        vim.keymap.set('n', 'gD', ivy(builtin.lsp_type_definitions), opts)
+        vim.keymap.set('n', 'gd', ivy(builtin.lsp_definitions), opts)
+        vim.keymap.set('n', '<C-g>', ivy(builtin.lsp_implementations), opts)
+        vim.keymap.set('n', 'gr', ivy(builtin.lsp_references), opts)
+        vim.keymap.set('n', 'gw', ivy(builtin.lsp_dynamic_workspace_symbols), opts)
 
         -- vim.keymap.set('n', 'T', ivy(builtin.diagnostics), {silent=true})
     end
